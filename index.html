@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МээскиТУБЭ</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение шрифта Pacifico -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/Favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">МээскиТУБЭ</div>
+    </header>
+    <main>
+        <div class="video-container">
+            <!-- Контейнер видеоплеера с кнопками переключения -->
+            <div class="video-player-container">
+                <video id="videoPlayer" controls></video>
+                <div class="video-controls">
+                    <button id="prevButton">⏮</button>
+                    <button id="nextButton">⏭</button>
+                </div>
+            </div>
+            <div class="history">
+                <h3>История просмотров</h3>
+                <div id="historyList" class="history-thumbnails"></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <label for="fileInput" class="file-input-label">Выбрать папку с видео</label>
+            <input type="file" webkitdirectory directory multiple id="fileInput">
+            <button id="sortButton" class="sort-button">Сортировать по названию (А-Я)</button>
+            <!-- Поле поиска -->
+            <input type="text" id="searchInput" placeholder="Поиск видео..." class="search-input">
+            <div id="videoList" class="video-thumbnails"></div>
+        </div>
+
+        <!-- Модальное окно для изменения названия -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <h3>Изменить название видео</h3>
+                <input type="text" id="editVideoName" placeholder="Новое название">
+                <button id="saveEditButton">Сохранить</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
